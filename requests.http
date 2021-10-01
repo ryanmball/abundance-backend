@@ -84,16 +84,16 @@ Content-Type: application/json
 
 {
   "month": 10,
-  "checking1": 2766.03,
-  "checking2": 1815,
-  "savings1": 7000,
+  "checking1": 0,
+  "checking2": 0,
+  "savings1": 0,
   "savings2": 0,
-  "credit_card1": 1533.56,
-  "credit_card2": 235.92,
-  "credit_card3": 1027,
+  "credit_card1": 0,
+  "credit_card2": 0,
+  "credit_card3": 0,
   "credit_card4": 0,
-  "loan1": 15920.69,
-  "loan2": 14902.53,
+  "loan1": 0,
+  "loan2": 0,
   "user_id": 1
 }
 
