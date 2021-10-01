@@ -2,23 +2,23 @@ Rails.application.routes.draw do
   # Expenses
   get "/expenses" => "expenses#index"
   post "/expenses" => "expenses#create"
-  get "/expenses" => "expenses#show"
-  patch "/expenses" => "expenses#update"
-  delete "/expenses" => "expenses#destroy"
+  get "/expenses/:id" => "expenses#show"
+  patch "/expenses/:id" => "expenses#update"
+  delete "/expenses/:id" => "expenses#destroy"
 
   # Incomes
   get "/incomes" => "incomes#index"
   post "/incomes" => "incomes#create"
-  get "/incomes" => "incomes#show"
-  patch "/incomes" => "incomes#update"
-  delete "/incomes" => "incomes#destroy"
+  get "/incomes/:id" => "incomes#show"
+  patch "/incomes/:id" => "incomes#update"
+  delete "/incomes/:id" => "incomes#destroy"
 
   # MonthlyBalances
   get "/monthly_balances" => "monthly_balances#index"
   post "/monthly_balances" => "monthly_balances#create"
-  get "/monthly_balances" => "monthly_balances#show"
-  patch "/monthly_balances" => "monthly_balances#update"
-  delete "/monthly_balances" => "monthly_balances#destroy"
+  get "/monthly_balances/:id" => "monthly_balances#show"
+  patch "/monthly_balances/:id" => "monthly_balances#update"
+  delete "/monthly_balances/:id" => "monthly_balances#destroy"
 
   # Account creation and login
   post "/users" => "users#create"

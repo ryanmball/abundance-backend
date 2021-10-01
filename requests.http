@@ -1,4 +1,123 @@
-POST http://localhost:3000/users
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzMyMDg3MzR9.SKJCL_i5q-kERuIYiz1_8dhM2H5O1B2thL5cXYLbGpI
+@hostname = http://localhost:3000
+
+### EXPENSES INDEX
+GET {{hostname}}/expenses
+Authorization: Bearer {{jwt}}
+
+### EXPENSES CREATE
+POST {{hostname}}/expenses
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+{
+  "date": "",
+  "amount": ,
+  "category": "",
+  "description": "",
+  "user_id": 1
+}
+
+### EXPENSES SHOW
+GET {{hostname}}/expenses/1
+Authorization: Bearer {{jwt}}
+
+### EXPENSES UPDATE
+PATCH {{hostname}}/expenses/1
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+{
+  "category": "Fitness"
+}
+
+### EXPENSES DESTROY
+DELETE {{hostname}}/expenses/1
+Authorization: Bearer {{jwt}}
+
+### ------------------------------------------------------------------ ###
+
+### INCOMES INDEX
+GET {{hostname}}/incomes
+Authorization: Bearer {{jwt}}
+
+### INCOMES CREATE
+POST {{hostname}}/incomes
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+{
+  "date": "",
+  "amount": ,
+  "category": "",
+  "description": "",
+  "user_id": 1
+}
+
+### INCOMES SHOW
+GET {{hostname}}/incomes/1
+Authorization: Bearer {{jwt}}
+
+### INCOMES UPDATE
+PATCH {{hostname}}/incomes/1
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+{
+  "category": "Fitness"
+}
+
+### INCOMES DESTROY
+DELETE {{hostname}}/incomes/1
+Authorization: Bearer {{jwt}}
+
+### ------------------------------------------------------------------ ###
+
+### MONTHLY_BALANCES INDEX
+GET {{hostname}}/monthly_balances
+Authorization: Bearer {{jwt}}
+
+### MONTHLY_BALANCES CREATE
+POST {{hostname}}/monthly_balances
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+{
+  "month": 10,
+  "checking1": 2766.03,
+  "checking2": 1815,
+  "savings1": 7000,
+  "savings2": 0,
+  "credit_card1": 1533.56,
+  "credit_card2": 235.92,
+  "credit_card3": 1027,
+  "credit_card4": 0,
+  "loan1": 15920.69,
+  "loan2": 14902.53,
+  "user_id": 1
+}
+
+### MONTHLY_BALANCES SHOW
+GET {{hostname}}/monthly_balances/2
+Authorization: Bearer {{jwt}}
+
+### MONTHLY_BALANCES UPDATE
+PATCH {{hostname}}/monthly_balances/2
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+{
+  "month": 12
+}
+
+### MONTHLY_BALANCES DESTROY
+DELETE {{hostname}}/monthly_balances/1
+Authorization: Bearer {{jwt}}
+
+### ------------------------------------------------------------------ ###
+
+### CREATE USER
+POST {{hostname}}/users
 Content-Type: application/json
 
 {
@@ -9,10 +128,11 @@ Content-Type: application/json
   "password_confirmation": "Acceptance1!"
 }
 
-# POST http://localhost:3000/sessions
-# Content-Type: application/json
+### LOGIN
+POST {{hostname}}/sessions
+Content-Type: application/json
 
-# {
-#   "email": "sid@gmail.com",
-#   "password": "password"
-# }
+{
+  "email": "ball.ryan.rb@gmail.com",
+  "password": "Acceptance1!"
+}
