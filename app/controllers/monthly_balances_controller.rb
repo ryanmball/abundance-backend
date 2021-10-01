@@ -1,0 +1,2 @@
+class MonthlyBalancesController < ApplicationController
+end
