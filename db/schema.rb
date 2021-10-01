@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_30_042404) do
+ActiveRecord::Schema.define(version: 2021_10_01_201257) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,23 @@ ActiveRecord::Schema.define(version: 2021_09_30_042404) do
     t.decimal "amount", precision: 10, scale: 2
     t.string "category"
     t.string "description"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "monthly_balances", force: :cascade do |t|
+    t.integer "month"
+    t.decimal "checking1", precision: 10, scale: 2
+    t.decimal "checking2", precision: 10, scale: 2
+    t.decimal "savings1", precision: 10, scale: 2
+    t.decimal "savings2", precision: 10, scale: 2
+    t.decimal "credit_card1", precision: 10, scale: 2
+    t.decimal "credit_card2", precision: 10, scale: 2
+    t.decimal "credit_card3", precision: 10, scale: 2
+    t.decimal "credit_card4", precision: 10, scale: 2
+    t.decimal "loan1", precision: 10, scale: 2
+    t.decimal "loan2", precision: 10, scale: 2
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
