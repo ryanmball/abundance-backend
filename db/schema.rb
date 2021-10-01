@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 2021_09_30_042404) do
     t.decimal "amount", precision: 10, scale: 2
     t.string "category"
     t.string "description"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
   end
 
   create_table "incomes", force: :cascade do |t|

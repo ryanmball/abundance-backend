@@ -1,18 +1,18 @@
-# POST http://localhost:3000/users
-# Content-Type: application/json
-
-# {
-#   "first_name": "Sid",
-#   "last_name": "Giraffe",
-#   "email": "sid@gmail.com",
-#   "password": "password",
-#   "password_confirmation": "password"
-# }
-
-POST http://localhost:3000/sessions
+POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "email": "sid@gmail.com",
-  "password": "password"
+  "first_name": "Ryan",
+  "last_name": "Ball",
+  "email": "ball.ryan.rb@gmail.com",
+  "password": "Acceptance1!",
+  "password_confirmation": "Acceptance1!"
 }
+
+# POST http://localhost:3000/sessions
+# Content-Type: application/json
+
+# {
+#   "email": "sid@gmail.com",
+#   "password": "password"
+# }
