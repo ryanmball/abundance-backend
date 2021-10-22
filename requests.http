@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzMyMDg3MzR9.SKJCL_i5q-kERuIYiz1_8dhM2H5O1B2thL5cXYLbGpI
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzUwMTE4Mjh9.zll8tYrPkXvYcgKJviNDSfs4vD-PMOf7k86hktOp_d4
 @hostname = http://localhost:3000
 
 ### EXPENSES INDEX
@@ -11,10 +11,10 @@ Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "date": "",
-  "amount": ,
-  "category": "",
-  "description": "",
+  "date": "2021-10-19",
+  "amount": 32.63,
+  "category": "Presents",
+  "description": "Prime Video purchases from Mom & Papa",
   "user_id": 1
 }
 
@@ -47,10 +47,10 @@ Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "date": "",
-  "amount": ,
-  "category": "",
-  "description": "",
+  "date": "2020-10-18",
+  "amount": 2900.00,
+  "category": "Financial Support",
+  "description": "Financial support from Dad",
   "user_id": 1
 }
 
