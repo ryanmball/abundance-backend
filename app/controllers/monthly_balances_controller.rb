@@ -57,4 +57,8 @@ class MonthlyBalancesController < ApplicationController
     render json: { message: "Monthly balance successfully destroyed!"}
   end
 
+  def net_cash
+    monthly_balances = MonthlyBalance.where(user_id: current_user.id)
+  end
+
 end

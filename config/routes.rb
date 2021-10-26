@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get "/monthly_balances/:id" => "monthly_balances#show"
   patch "/monthly_balances/:id" => "monthly_balances#update"
   delete "/monthly_balances/:id" => "monthly_balances#destroy"
+  get "/net_cash" => "monthly_balances#net_cash"
 
   # Account creation and login
   post "/users" => "users#create"
