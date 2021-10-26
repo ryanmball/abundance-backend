@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get "/expenses/:id" => "expenses#show"
   patch "/expenses/:id" => "expenses#update"
   delete "/expenses/:id" => "expenses#destroy"
+  get "/monthly_totals" => "expenses#monthly_totals"
+  get "/category_totals" => "expenses#category_totals"
 
   # Incomes
   get "/incomes" => "incomes#index"

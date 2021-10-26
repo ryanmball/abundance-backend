@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzUwMTE4Mjh9.zll8tYrPkXvYcgKJviNDSfs4vD-PMOf7k86hktOp_d4
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzUyOTMzMTl9.W3epVWvucqh69dYZGZ5zzaBeW2PN4oa2x5ukQL42m24
 @hostname = http://localhost:3000
 
 ### EXPENSES INDEX
@@ -33,6 +33,14 @@ Content-Type: application/json
 
 ### EXPENSES DESTROY
 DELETE {{hostname}}/expenses/1
+Authorization: Bearer {{jwt}}
+
+### EXPENSES MONTHLY TOTALS
+GET {{hostname}}/monthly_totals
+Authorization: Bearer {{jwt}}
+
+### CATEGORY TOTALS
+GET {{hostname}}/category_totals
 Authorization: Bearer {{jwt}}
 
 ### ------------------------------------------------------------------ ###
