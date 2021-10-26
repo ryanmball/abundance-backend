@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzUzNTAyMTl9.lheM0CxCdoMDTCZSWpuzhVAyoNSlmMUEQSCh1EcCxwA
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzUzNjYzNjZ9.sOymqMZNEXLsMi3mQdddoi3PFyW_t0GW6KIkXgQbrGQ
 @hostname = http://localhost:3000
 
 ### EXPENSES INDEX
@@ -32,7 +32,7 @@ Content-Type: application/json
 }
 
 ### EXPENSES DESTROY
-DELETE {{hostname}}/expenses/1
+DELETE {{hostname}}/expenses/17
 Authorization: Bearer {{jwt}}
 
 ### EXPENSES MONTHLY TOTALS
@@ -81,11 +81,11 @@ Authorization: Bearer {{jwt}}
 
 ### ------------------------------------------------------------------ ###
 
-### MONTHLY_BALANCES INDEX
+### MONTHLY BALANCES INDEX
 GET {{hostname}}/monthly_balances
 Authorization: Bearer {{jwt}}
 
-### MONTHLY_BALANCES CREATE
+### MONTHLY BALANCES CREATE
 POST {{hostname}}/monthly_balances
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
@@ -105,7 +105,7 @@ Content-Type: application/json
   "user_id": 1
 }
 
-### MONTHLY_BALANCES SHOW
+### MONTHLY BALANCES SHOW
 GET {{hostname}}/monthly_balances/2
 Authorization: Bearer {{jwt}}
 
@@ -118,8 +118,12 @@ Content-Type: application/json
   "month": 12
 }
 
-### MONTHLY_BALANCES DESTROY
+### MONTHLY BALANCES DESTROY
 DELETE {{hostname}}/monthly_balances/1
+Authorization: Bearer {{jwt}}
+
+### MONTHLY BALANCES NET CASH
+GET {{hostname}}/net_cash
 Authorization: Bearer {{jwt}}
 
 ### ------------------------------------------------------------------ ###
