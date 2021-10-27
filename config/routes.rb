@@ -23,8 +23,10 @@ Rails.application.routes.draw do
   delete "/monthly_balances/:id" => "monthly_balances#destroy"
   get "/net_cash" => "monthly_balances#net_cash"
 
-  # Account creation and login
+  # Account creation, login and user profile
   post "/users" => "users#create"
   post "/sessions" => "sessions#create"
+
+  get "/users/:id" => "users#show"
 
 end
