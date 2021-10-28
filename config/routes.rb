@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   get "/expenses/:id" => "expenses#show"
   patch "/expenses/:id" => "expenses#update"
   delete "/expenses/:id" => "expenses#destroy"
-  get "/monthly_totals" => "expenses#monthly_totals"
-  get "/category_totals" => "expenses#category_totals"
+  get "/monthly_expenses" => "expenses#monthly_expenses"
+  get "/category_expenses" => "expenses#category_expenses"
 
   # Incomes
   get "/incomes" => "incomes#index"
@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get "/incomes/:id" => "incomes#show"
   patch "/incomes/:id" => "incomes#update"
   delete "/incomes/:id" => "incomes#destroy"
+  get "/monthly_incomes" => "incomes#monthly_incomes"
+  get "/category_incomes" => "incomes#category_incomes"
 
   # MonthlyBalances
   get "/monthly_balances" => "monthly_balances#index"

@@ -43,22 +43,22 @@ class ExpensesController < ApplicationController
     render json: { message: "Expense successfully destroyed!"}
   end
 
-  def monthly_totals
+  def monthly_expenses
     all_expenses = Expense.where(user_id: current_user.id)
     monthly_hash = Hash.new(0)
     all_expenses.each { |expense| monthly_hash[expense.date.to_s[5..6]] += expense.amount}
     total = 0
     monthly_hash.each { |k, v| total += v }
-    render json: { monthly_totals: monthly_hash, total: total }
+    render json: { monthly_expenses: monthly_hash, total: total }
   end
 
-  def category_totals
+  def category_expenses
     all_expenses = Expense.where(user_id: current_user.id)
     category_hash = Hash.new(0)
     all_expenses.each { |expense| category_hash[expense.category] += expense.amount }
     total = 0
     category_hash.each { |k, v| total += v }
-    render json: { category_totals: category_hash, total: total }
+    render json: { category_expenses: category_hash, total: total }
   end
 
 end
