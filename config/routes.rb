@@ -25,6 +25,9 @@ Rails.application.routes.draw do
   delete "/monthly_balances/:id" => "monthly_balances#destroy"
   get "/net_cash" => "monthly_balances#net_cash"
 
+  # CurrentBalances
+  post "/current_balances" => "current_balances#create"
+
   # Account creation, login and user profile
   post "/users" => "users#create"
   post "/sessions" => "sessions#create"

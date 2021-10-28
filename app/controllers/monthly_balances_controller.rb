@@ -8,6 +8,7 @@ class MonthlyBalancesController < ApplicationController
   def create
     monthly_balance = MonthlyBalance.new(
       month: params[:month],
+      year: params[:year],
       checking1: params[:checking1],
       checking2: params[:checking2],
       savings1: params[:savings1],
@@ -18,6 +19,7 @@ class MonthlyBalancesController < ApplicationController
       credit_card4: params[:credit_card4],
       loan1: params[:loan1],
       loan2: params[:loan2],
+      personal_IRA: params[:personal_IRA],
       user_id: current_user.id,
     )
     if monthly_balance.save
@@ -34,6 +36,7 @@ class MonthlyBalancesController < ApplicationController
   def update
     monthly_balance = MonthlyBalance.find(params[:id])
     monthly_balance.month = params[:month] || monthly_balance.month
+    monthly_balance.year = params[:year] || monthly_balance.year
     monthly_balance.checking1 = params[:checking1] || monthly_balance.checking1
     monthly_balance.checking2 = params[:checking2] || monthly_balance.checking2
     monthly_balance.savings1 = params[:savings1] || monthly_balance.savings1
@@ -44,6 +47,7 @@ class MonthlyBalancesController < ApplicationController
     monthly_balance.credit_card4 = params[:credit_card4] || monthly_balance.credit_card4
     monthly_balance.loan1 = params[:loan1] || monthly_balance.loan1
     monthly_balance.loan2 = params[:loan2] || monthly_balance.loan2
+    monthly_balance.personal_IRA = params[:personal_IRA] || monthly_balance.personal_IRA
     if monthly_balance.save
       render json: monthly_balance         #HAPPY PATH
     else
@@ -61,7 +65,7 @@ class MonthlyBalancesController < ApplicationController
     monthly_balances = MonthlyBalance.where(user_id: current_user.id)
     month_hash = Hash.new(0)
     monthly_balances.each { |balance| month_hash[balance.month] += (balance.checking1 + balance.checking2 + balance.savings1 + balance.savings2 - balance.credit_card1 - balance.credit_card2 - balance.credit_card3 - balance.credit_card4)}
-    render json: month_hash
+    render json: month_hash.to_a
   end
 
 end
