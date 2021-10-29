@@ -1,4 +1,8 @@
 class CurrentBalancesController < ApplicationController
+  def show
+    render json: CurrentBalance.last
+  end
+
   def create
     current_balance = CurrentBalance.new(
       checking1: params[:checking1],

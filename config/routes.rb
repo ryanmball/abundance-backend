@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get "/net_cash" => "monthly_balances#net_cash"
 
   # CurrentBalances
+  get "/current_balances" => "current_balances#show"
   post "/current_balances" => "current_balances#create"
 
   # Account creation, login and user profile
