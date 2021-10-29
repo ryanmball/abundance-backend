@@ -10,8 +10,6 @@ class CreateCurrentBalances < ActiveRecord::Migration[6.1]
       t.decimal :credit_card3, precision: 10, scale: 2, default: 0.00
       t.decimal :credit_card4, precision: 10, scale: 2, default: 0.00
       t.decimal :net_cash, precision: 10, scale: 2
-
-      
       t.integer :user_id
 
       t.timestamps
