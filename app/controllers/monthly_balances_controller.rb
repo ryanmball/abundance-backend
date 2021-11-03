@@ -63,9 +63,15 @@ class MonthlyBalancesController < ApplicationController
 
   def net_cash
     monthly_balances = MonthlyBalance.where(user_id: current_user.id)
-    month_hash = Hash.new(0)
-    monthly_balances.each { |balance| month_hash[balance.month] += (balance.checking1 + balance.checking2 + balance.savings1 + balance.savings2 - balance.credit_card1 - balance.credit_card2 - balance.credit_card3 - balance.credit_card4)}
-    render json: month_hash.to_a
+    month_arr = []
+    monthly_balances.each do |balance|
+      month_hash = Hash.new(0)
+      month_hash["month"] = balance.month
+      month_hash["year"] = balance.year
+      month_hash["net_cash"] += (balance.checking1 + balance.checking2 + balance.savings1 + balance.savings2 - balance.credit_card1 - balance.credit_card2 - balance.credit_card3 - balance.credit_card4)
+      month_arr << month_hash
+    end
+    render json: month_arr
   end
 
 end
