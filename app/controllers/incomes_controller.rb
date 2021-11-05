@@ -13,6 +13,8 @@ class IncomesController < ApplicationController
       description: params[:description],
       user_id: current_user.id,
     )
+    income.year = income.date.year
+    income.month = income.date.month
     if income.save
       render json: income         #HAPPY PATH
     else
@@ -30,6 +32,8 @@ class IncomesController < ApplicationController
     income.amount = params[:amount] || income.amount
     income.category = params[:category] || income.category
     income.description = params[:description] || income.description
+    income.year = income.date.year
+    income.month = income.date.month
     if income.save
       render json: income         #HAPPY PATH
     else

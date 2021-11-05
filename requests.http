@@ -19,11 +19,11 @@ Content-Type: application/json
 }
 
 ### EXPENSES SHOW
-GET {{hostname}}/expenses/1
+GET {{hostname}}/expenses/ID-HERE
 Authorization: Bearer {{jwt}}
 
 ### EXPENSES UPDATE
-PATCH {{hostname}}/expenses/93
+PATCH {{hostname}}/expenses/ID-HERE
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
@@ -32,7 +32,7 @@ Content-Type: application/json
 }
 
 ### EXPENSES DESTROY
-DELETE {{hostname}}/expenses/92
+DELETE {{hostname}}/expenses/ID-HERE
 Authorization: Bearer {{jwt}}
 
 ### EXPENSES MONTHLY TOTALS
@@ -63,20 +63,20 @@ Content-Type: application/json
 }
 
 ### INCOMES SHOW
-GET {{hostname}}/incomes/1
+GET {{hostname}}/incomes/ID-HERE
 Authorization: Bearer {{jwt}}
 
 ### INCOMES UPDATE
-PATCH {{hostname}}/incomes/1
+PATCH {{hostname}}/incomes/ID-HERE
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "category": "Fitness"
+  "date": "2021-11-04"
 }
 
 ### INCOMES DESTROY
-DELETE {{hostname}}/incomes/6
+DELETE {{hostname}}/incomes/ID-HERE
 Authorization: Bearer {{jwt}}
 
 ### ------------------------------------------------------------------ ###
