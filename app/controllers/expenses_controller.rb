@@ -13,6 +13,8 @@ class ExpensesController < ApplicationController
       description: params[:description],
       user_id: current_user.id,
     )
+    expense.year = expense.date.month
+    expense.month = expense.date.year
     if expense.save
       render json: expense         #HAPPY PATH
     else
@@ -30,6 +32,8 @@ class ExpensesController < ApplicationController
     expense.amount = params[:amount] || expense.amount
     expense.category = params[:category] || expense.category
     expense.description = params[:description] || expense.description
+    expense.year = expense.date.year
+    expense.month = expense.date.month
     if expense.save
       render json: expense         #HAPPY PATH
     else

@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzU0NjM2MzJ9.q974uatwjtuWzgUxRDwgHt9jVFKeHkYDlaCQ5kTBgro
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzYxNjM2MzF9.Ppa6iXnNZKCmpd9Rm3LnvftFDdTwGSSSze4_POwJVU4
 @hostname = http://localhost:3000
 
 ### EXPENSES INDEX
@@ -23,16 +23,16 @@ GET {{hostname}}/expenses/1
 Authorization: Bearer {{jwt}}
 
 ### EXPENSES UPDATE
-PATCH {{hostname}}/expenses/1
+PATCH {{hostname}}/expenses/93
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "category": "Fitness"
+  "date": "2021-11-04"
 }
 
 ### EXPENSES DESTROY
-DELETE {{hostname}}/expenses/70
+DELETE {{hostname}}/expenses/92
 Authorization: Bearer {{jwt}}
 
 ### EXPENSES MONTHLY TOTALS
