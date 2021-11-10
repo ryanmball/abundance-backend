@@ -30,8 +30,7 @@ Rails.application.routes.draw do
   post "/current_balances" => "current_balances#create"
 
   # Calcs
-  post "/calcs/net_cash_beginning" => "calcs#net_cash_beginning"
-  post "/calcs/net_cash_ending" => "calcs#net_cash_ending"
+  get "/calcs/monthly_data" => "calcs#monthly_data"
 
   # Account creation, login and user profile
   post "/users" => "users#create"
