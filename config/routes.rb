@@ -5,13 +5,15 @@ Rails.application.routes.draw do
   get "/expenses/:id" => "expenses#show"
   patch "/expenses/:id" => "expenses#update"
   delete "/expenses/:id" => "expenses#destroy"
-
+  get "/recurring" => "expenses#recurring"
+  
   # Incomes
   get "/incomes" => "incomes#index"
   post "/incomes" => "incomes#create"
   get "/incomes/:id" => "incomes#show"
   patch "/incomes/:id" => "incomes#update"
   delete "/incomes/:id" => "incomes#destroy"
+  get "/recurring" => "incomes#recurring"
 
   # MonthlyBalances
   get "/monthly_balances" => "monthly_balances#index"

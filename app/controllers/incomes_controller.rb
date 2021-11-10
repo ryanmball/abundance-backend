@@ -49,8 +49,9 @@ class IncomesController < ApplicationController
     render json: { message: "Income successfully destroyed!"}
   end
 
-  def recurring_incomes
-    
+  def recurring
+    recurring_incomes = Income.where(user_id: current_user.id, recurring: true).pluck(:category, :description).uniq
+    render json: recurring_incomes
   end
 
   def category_incomes

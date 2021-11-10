@@ -49,8 +49,9 @@ class ExpensesController < ApplicationController
     render json: { message: "Expense successfully destroyed!"}
   end
 
-  def recurring_expenses
-    
+  def recurring
+    recurring_expenses = Expense.where(user_id: current_user.id, recurring: true).pluck(:category, :description).uniq
+    render json: recurring_expenses
   end
 
   def category_expenses
