@@ -29,6 +29,10 @@ Rails.application.routes.draw do
   # Calcs
   get "/calcs/monthly_data" => "calcs#monthly_data"
 
+  # Recurring
+  get "/recurring_expenses" => "recurring_expenses#index"
+  get "/recurring_incomes" => "recurring_incomes#index"
+
   # Account creation, login and user profile
   post "/users" => "users#create"
   post "/sessions" => "sessions#create"
