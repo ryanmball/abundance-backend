@@ -1,6 +1,6 @@
 class CurrentBalancesController < ApplicationController
   def show
-    render json: CurrentBalance.last
+    render json: CurrentBalance.where(user_id: current_user.id).last
   end
 
   def create
