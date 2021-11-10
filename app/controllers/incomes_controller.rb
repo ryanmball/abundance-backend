@@ -49,13 +49,8 @@ class IncomesController < ApplicationController
     render json: { message: "Income successfully destroyed!"}
   end
 
-  def monthly_incomes
-    all_incomes = Income.where(user_id: current_user.id)
-    monthly_hash = Hash.new(0)
-    all_incomes.each { |income| monthly_hash[income.date.to_s[5..6]] += income.amount}
-    total = 0
-    monthly_hash.each { |k, v| total += v }
-    render json: { monthly_incomes: monthly_hash, total: total }
+  def recurring_incomes
+    
   end
 
   def category_incomes
