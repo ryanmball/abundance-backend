@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_10_031719) do
+ActiveRecord::Schema.define(version: 2021_11_10_185233) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2021_11_10_031719) do
     t.integer "month"
     t.integer "year"
     t.string "date_identifier"
+    t.boolean "recurring", default: false
   end
 
   create_table "incomes", force: :cascade do |t|
@@ -54,6 +55,7 @@ ActiveRecord::Schema.define(version: 2021_11_10_031719) do
     t.integer "month"
     t.integer "year"
     t.string "date_identifier"
+    t.boolean "recurring", default: false
   end
 
   create_table "monthly_balances", force: :cascade do |t|
