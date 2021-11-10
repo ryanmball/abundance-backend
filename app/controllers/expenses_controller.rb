@@ -15,6 +15,7 @@ class ExpensesController < ApplicationController
     )
     expense.year = expense.date.year
     expense.month = expense.date.month
+    expense.date_identifier = "#{expense.date.month}.#{expense.date.year}"
     if expense.save
       render json: expense         #HAPPY PATH
     else
@@ -34,6 +35,7 @@ class ExpensesController < ApplicationController
     expense.description = params[:description] || expense.description
     expense.year = expense.date.year
     expense.month = expense.date.month
+    expense.date_identifier = "#{expense.date.month}.#{expense.date.year}"
     if expense.save
       render json: expense         #HAPPY PATH
     else

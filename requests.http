@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzYxNjM2MzF9.Ppa6iXnNZKCmpd9Rm3LnvftFDdTwGSSSze4_POwJVU4
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzY2MDEyMjB9.a7pmfkQYhmjE4ll0CkuI-Nht-jCbE09Ve_9v6AR9LbY
 @hostname = http://localhost:3000
 
 ### EXPENSES INDEX

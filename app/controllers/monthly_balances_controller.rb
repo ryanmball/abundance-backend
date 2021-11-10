@@ -22,6 +22,7 @@ class MonthlyBalancesController < ApplicationController
       personal_IRA: params[:personal_IRA],
       user_id: current_user.id,
     )
+    monthly_balance.date_identifier = "#{monthly_balance.month}.#{monthly_balance.year}"
     if monthly_balance.save
       render json: monthly_balance         #HAPPY PATH
     else
