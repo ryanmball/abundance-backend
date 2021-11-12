@@ -31,7 +31,11 @@ Rails.application.routes.draw do
 
   # Recurring
   get "/recurring_expenses" => "recurring_expenses#index"
+  get "/recurring_expenses_names" => "recurring_expenses#names"
+  get "/recurring_expenses_totals" => "recurring_expenses#totals"
   get "/recurring_incomes" => "recurring_incomes#index"
+  get "/recurring_incomes_names" => "recurring_incomes#names"
+  get "/recurring_incomes_totals" => "recurring_incomes#totals"
 
   # Account creation, login and user profile
   post "/users" => "users#create"
