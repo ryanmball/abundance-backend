@@ -11,6 +11,7 @@ class ExpensesController < ApplicationController
       amount: params[:amount],
       category: params[:category],
       description: params[:description],
+      recurring: params[:recurring],
       user_id: current_user.id,
     )
     expense.year = expense.date.year
@@ -33,6 +34,7 @@ class ExpensesController < ApplicationController
     expense.amount = params[:amount] || expense.amount
     expense.category = params[:category] || expense.category
     expense.description = params[:description] || expense.description
+    expense.recurring = params[:recurring] || expense.recurring
     expense.year = expense.date.year
     expense.month = expense.date.month
     expense.date_identifier = "#{expense.date.month}.#{expense.date.year}"
