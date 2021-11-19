@@ -4,4 +4,5 @@ class Expense < ApplicationRecord
   validates :category, presence: true
   
   belongs_to :user
+  belongs_to :expense_group
 end
