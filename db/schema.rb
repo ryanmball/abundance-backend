@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_11_214636) do
+ActiveRecord::Schema.define(version: 2021_11_19_030451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,14 @@ ActiveRecord::Schema.define(version: 2021_11_11_214636) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "expense_groups", force: :cascade do |t|
+    t.string "name"
+    t.date "start_date"
+    t.date "end_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "expenses", force: :cascade do |t|
     t.date "date"
     t.decimal "amount", precision: 10, scale: 2
@@ -42,6 +50,7 @@ ActiveRecord::Schema.define(version: 2021_11_11_214636) do
     t.integer "year"
     t.string "date_identifier"
     t.boolean "recurring", default: false
+    t.integer "expense_group_id"
   end
 
   create_table "incomes", force: :cascade do |t|
