@@ -7,6 +7,13 @@ Rails.application.routes.draw do
   delete "/expenses/:id" => "expenses#destroy"
   get "/recurring" => "expenses#recurring"
   
+  # ExpenseGroups
+  get "/expense_groups" => "expense_groups#index"
+  post "/expense_groups" => "expense_groups#create"
+  get "/expense_groups/:id" => "expense_groups#show"
+  patch "/expense_groups/:id" => "expense_groups#update"
+  delete "/expense_groups/:id" => "expense_groups#destroy"
+  
   # Incomes
   get "/incomes" => "incomes#index"
   post "/incomes" => "incomes#create"
