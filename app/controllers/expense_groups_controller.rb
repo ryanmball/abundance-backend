@@ -8,6 +8,7 @@ class ExpenseGroupsController < ApplicationController
       name: params[:name],
       start_date: params[:start_date],
       end_date: params[:end_date],
+      user_id: current_user.id,
     )
     if expense_group.save
       render json: expense_group         #HAPPY PATH
