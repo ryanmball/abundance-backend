@@ -11,6 +11,7 @@ class IncomesController < ApplicationController
       amount: params[:amount],
       category: params[:category],
       description: params[:description],
+      recurring: params[:recurring],
       user_id: current_user.id,
     )
     income.year = income.date.year
@@ -33,6 +34,7 @@ class IncomesController < ApplicationController
     income.amount = params[:amount] || income.amount
     income.category = params[:category] || income.category
     income.description = params[:description] || income.description
+    income.recurring = params[:recurring] || income.recurring
     income.year = income.date.year
     income.month = income.date.month
     income.date_identifier = "#{income.date.month}.#{income.date.year}"
