@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   patch "/expenses/:id" => "expenses#update"
   delete "/expenses/:id" => "expenses#destroy"
   get "/recurring" => "expenses#recurring"
+  get "/categories" => "expenses#categories"
   
   # ExpenseGroups
   get "/expense_groups" => "expense_groups#index"

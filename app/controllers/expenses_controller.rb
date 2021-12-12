@@ -58,6 +58,10 @@ class ExpensesController < ApplicationController
     render json: recurring_expenses
   end
 
+  def categories
+    render json: Expense.where(user_id: current_user.id).map{ |expense| expense[:category] }.uniq.sort
+  end
+
   def category_expenses
     all_expenses = Expense.where(user_id: current_user.id)
     category_hash = Hash.new(0)
