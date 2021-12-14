@@ -1,7 +1,6 @@
 class RecurringExpensesController < ApplicationController
   def index
-    recurring_expenses = RecurringExpense.where(user_id: current_user.id).order(:category)
-    render json: recurring_expenses
+    render json: RecurringExpense.where(user_id: current_user.id).order(:category)
   end
 
   def names
