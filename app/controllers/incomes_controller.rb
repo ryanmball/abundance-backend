@@ -52,8 +52,7 @@ class IncomesController < ApplicationController
   end
 
   def recurring
-    recurring_incomes = Income.where(user_id: current_user.id, recurring: true).pluck(:category, :description).uniq
-    render json: recurring_incomes
+    render json: Income.where(user_id: current_user.id, recurring: true).pluck(:category, :description).uniq
   end
 
   def category_incomes
