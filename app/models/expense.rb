@@ -5,4 +5,5 @@ class Expense < ApplicationRecord
   
   belongs_to :user
   belongs_to :expense_group, optional: true
+  belongs_to :account
 end

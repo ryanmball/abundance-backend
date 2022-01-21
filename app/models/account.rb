@@ -6,4 +6,6 @@ class Account < ApplicationRecord
   validates :net_cash_calc, presence: true
 
   belongs_to :user
+  has_many :balances
+  has_many :expenses
 end
