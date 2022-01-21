@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_19_040738) do
+ActiveRecord::Schema.define(version: 2022_01_21_001313) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "balances", force: :cascade do |t|
+    t.integer "month"
+    t.integer "year"
+    t.date "date"
+    t.string "account_name"
+    t.decimal "balance", precision: 10, scale: 2
+    t.string "type"
+    t.string "accounting_type"
+    t.boolean "net_cash?"
+    t.string "date_identifier"
+    t.boolean "monthly_balance?"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "current_balances", force: :cascade do |t|
     t.decimal "checking1", precision: 10, scale: 2, default: "0.0"
