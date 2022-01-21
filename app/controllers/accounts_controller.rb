@@ -13,6 +13,9 @@ class AccountsController < ApplicationController
       net_cash_calc: params[:net_cash_calc],
       user_id: current_user.id,
     )
+    if !account.net_cash_calc
+      account.net_cash_calc = false
+    end
     if account.save
       render json: account         #HAPPY PATH
     else
