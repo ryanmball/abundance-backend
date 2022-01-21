@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :expenses
   has_many :incomes
   has_many :monthly_balances
-  has_many :balances
+  has_many :accounts
   has_many :current_balances
   has_many :recurring_expenses
   has_many :recurring_incomes
