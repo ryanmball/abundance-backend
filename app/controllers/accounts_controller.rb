@@ -8,7 +8,7 @@ class AccountsController < ApplicationController
       name: params[:name],
       account_identifier: params[:account_identifier],
       description: params[:description],
-      type: params[:type],
+      account_type: params[:account_type],
       accounting_type: params[:accounting_type],
       net_cash_calc: params[:net_cash_calc],
       user_id: current_user.id,
