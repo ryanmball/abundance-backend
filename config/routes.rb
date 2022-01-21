@@ -30,9 +30,13 @@ Rails.application.routes.draw do
   patch "/monthly_balances/:id" => "monthly_balances#update"
   delete "/monthly_balances/:id" => "monthly_balances#destroy"
 
+  # Accounts
+  get "/accounts" => "accounts#index"
+  post "/accounts" => "accounts#create"
+
   # Balances
-  get "/balances" => "balance#index"
-  post "/balances" => "balance#create"
+  get "/balances" => "balances#index"
+  post "/balances" => "balances#create"
 
   # CurrentBalances
   get "/current_balances" => "current_balances#show"
