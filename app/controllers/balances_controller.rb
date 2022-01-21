@@ -12,8 +12,8 @@ class BalancesController < ApplicationController
       balance: params[:balance],
       type: params[:type],
       accounting_type: params[:accounting_type],
-      net_cash?: params[:net_cash?],
-      monthly_balance?: params[:monthly_balance?],
+      net_cash_calc: params[:net_cash_calc],
+      monthly_balance: params[:monthly_balance],
       user_id: current_user.id,
     )
     balance.date_identifier = "#{balance.month}.#{balance.year}"
