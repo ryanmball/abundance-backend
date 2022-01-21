@@ -13,7 +13,7 @@ class ExpensesController < ApplicationController
       description: params[:description],
       recurring: params[:recurring],
       expense_group_id: params[:expense_group_id],
-      account_id: params[:account_id]
+      account_id: params[:account_id],
       user_id: current_user.id,
     )
     expense.year = expense.date.year
