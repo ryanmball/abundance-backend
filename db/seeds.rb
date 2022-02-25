@@ -4,7 +4,6 @@
 #   {category: "Subscriptions", name: "Hulu", description: "Hulu monthly subscription", estimate: 7.61, user_id: 1},
 #   {category: "Subscriptions", name: "Microsoft 365", description: "Microsoft 365 monthly subscription", estimate: 7.33, user_id: 1},
 #   {category: "Rent & Utilities", name: "Public Storage", description: "Public Storage", estimate: 122.00, user_id: 1},
-#   {category: "Rent & Utilities", name: "Courtney", description: "Courtney rent & utilities", estimate: -875.00, user_id: 1},
 #   {category: "Rent & Utilities", name: "Regatta", description: "Regatta rent & utilities", estimate: 1625.00, user_id: 1},
 #   {category: "Rent & Utilities", name: "Visible", description: "Visible phone plan", estimate: 59.25, user_id: 1},
 #   {category: "Gas & Car", name: "Tiguan", description: "Tiguan monthly payment", estimate: 349.00, user_id: 1},
@@ -19,3 +18,8 @@
 #   {category: "Rent & Utilities", name: "Shift", description: "Shift office rent", estimate: 699.00, user_id: 1},
 #   {category: "Presents", name: "Prime Video", description: "Prime Video purchases from Mom & Papa", estimate: 0.00, user_id: 1}
 #   ])
+
+# RecurringExpense.create!([
+#   {category: "Subscriptions", name: "LifeLock", description: "LifeLock monthly subscription", estimate: 10, user_id: 1},
+#   {category: "Self-Care", name: "Archipelago", description: "Archipelago monthly membership", estimate: 120, user_id: 1}
+# ])
