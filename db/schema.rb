@@ -10,17 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_21_044832) do
+ActiveRecord::Schema.define(version: 2022_02_27_215631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "accounts", force: :cascade do |t|
     t.string "name"
-    t.string "account_identifier"
+    t.string "identifier"
     t.string "description"
-    t.string "account_type"
-    t.string "accounting_type"
+    t.string "type"
     t.boolean "net_cash_calc", default: false
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
