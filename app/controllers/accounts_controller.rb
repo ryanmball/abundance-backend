@@ -1,6 +1,6 @@
 class AccountsController < ApplicationController
   def index
-    render json: Account.where(user_id: current_user.id).order(:type)
+    render json: Account.where(user_id: current_user.id).order(:account_type)
   end
 
   def create

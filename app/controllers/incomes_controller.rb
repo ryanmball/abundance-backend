@@ -16,7 +16,7 @@ class IncomesController < ApplicationController
     )
     income.year = income.date.year
     income.month = income.date.month
-    income.date_identifier = "#{income.date.month}.#{income.date.year}"
+    income.date_identifier = "#{Date.new(income.date.year, income.date.month, 1).strftime("%^b")}.#{income.date.year}"
     if income.save
       render json: income         #HAPPY PATH
     else
@@ -26,23 +26,6 @@ class IncomesController < ApplicationController
 
   def show
     render json: Income.find(params[:id])
-  end
-
-  def update
-    income = Income.find(params[:id])
-    income.date = params[:date] || income.date
-    income.amount = params[:amount] || income.amount
-    income.category = params[:category] || income.category
-    income.description = params[:description] || income.description
-    income.recurring = params[:recurring] || income.recurring
-    income.year = income.date.year
-    income.month = income.date.month
-    income.date_identifier = "#{income.date.month}.#{income.date.year}"
-    if income.save
-      render json: income         #HAPPY PATH
-    else
-      render json: { errors: income.errors.full_messages }, status: :unprocessable_entity       #SAD PATH
-    end
   end
 
   def destroy

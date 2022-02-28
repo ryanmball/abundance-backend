@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   get "/expenses" => "expenses#index"
   post "/expenses" => "expenses#create"
   get "/expenses/:id" => "expenses#show"
-  patch "/expenses/:id" => "expenses#update"
   delete "/expenses/:id" => "expenses#destroy"
   get "/recurring" => "expenses#recurring"
   get "/categories" => "expenses#categories"
@@ -19,7 +18,6 @@ Rails.application.routes.draw do
   get "/incomes" => "incomes#index"
   post "/incomes" => "incomes#create"
   get "/incomes/:id" => "incomes#show"
-  patch "/incomes/:id" => "incomes#update"
   delete "/incomes/:id" => "incomes#destroy"
   get "/recurring" => "incomes#recurring"
 

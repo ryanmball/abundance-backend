@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_27_215631) do
+ActiveRecord::Schema.define(version: 2022_02_28_002546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2022_02_27_215631) do
     t.string "name"
     t.string "identifier"
     t.string "description"
-    t.string "type"
+    t.string "account_type"
     t.boolean "net_cash_calc", default: false
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false

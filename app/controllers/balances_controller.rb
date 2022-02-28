@@ -10,7 +10,7 @@ class BalancesController < ApplicationController
       amount: params[:amount],
       account_id: params[:account_id],
     )
-    balance.date_identifier = "#{balance.month}.#{balance.year}"
+    balance.date_identifier = "#{Date.new(balance.year, balance.month, 1).strftime("%^b")}.#{balance.year}"
     if balance.save
       render json: balance         #HAPPY PATH
     else

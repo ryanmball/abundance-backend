@@ -18,7 +18,7 @@ class ExpensesController < ApplicationController
     )
     expense.year = expense.date.year
     expense.month = expense.date.month
-    expense.date_identifier = "#{expense.date.month}.#{expense.date.year}"
+    expense.date_identifier = "#{Date.new(expense.date.year, expense.date.month, 1).strftime("%^b")}.#{expense.date.year}"
     if expense.save
       render json: expense         #HAPPY PATH
     else
@@ -28,25 +28,6 @@ class ExpensesController < ApplicationController
 
   def show
     render json: Expense.find(params[:id])
-  end
-
-  def update
-    expense = Expense.find(params[:id])
-    expense.date = params[:date] || expense.date
-    expense.amount = params[:amount] || expense.amount
-    expense.category = params[:category] || expense.category
-    expense.description = params[:description] || expense.description
-    expense.recurring = params[:recurring] || expense.recurring
-    expense.expense_group_id = params[:expense_group_id] || expense.expense_group_id
-    expense.account_id = params[:account_id] || expense.account_id
-    expense.year = expense.date.year
-    expense.month = expense.date.month
-    expense.date_identifier = "#{expense.date.month}.#{expense.date.year}"
-    if expense.save
-      render json: expense         #HAPPY PATH
-    else
-      render json: { errors: expense.errors.full_messages }, status: :unprocessable_entity       #SAD PATH
-    end
   end
 
   def destroy
